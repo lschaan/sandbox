@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        springBootStarterVersion = "2.7.2"
+        swaggerVersion = "2.9.2"
+    }
+}
+plugins {
+    id 'java'
+}
+
+group 'com.lschaan.poc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web:$springBootStarterVersion")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootStarterVersion")
+    implementation("org.springframework.boot:spring-boot-starter-batch:$springBootStarterVersion")
+
+    implementation("io.springfox:springfox-swagger2:${swaggerVersion}")
+    implementation("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+
+    implementation('mysql:mysql-connector-java:8.0.30')
+
+    testImplementation('junit:junit:4.13.2')
+}

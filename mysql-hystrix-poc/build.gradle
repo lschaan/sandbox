@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'java'
+    id 'application'
+}
+
+run {
+	mainClassName = 'com.lschaan.mysql.application.SongApplication'
+}
+
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('hystrixVersion', '1.4.21')
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'    
+    
+    implementation("mysql:mysql-connector-java:8.0.15")
+    
+    implementation("com.netflix.hystrix:hystrix-core:$hystrixVersion")
+    implementation("com.netflix.hystrix:hystrix-metrics-event-stream:$hystrixVersion")
+}

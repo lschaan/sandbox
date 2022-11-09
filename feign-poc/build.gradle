@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def feignVersion = "10.2.3"
+
+dependencies {
+  	implementation ("io.github.openfeign:feign-core:$feignVersion")
+    implementation ("io.github.openfeign:feign-gson:$feignVersion")
+}
